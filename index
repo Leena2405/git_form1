@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Przykładowy form 1</h1>
+
+    <div class="form1">
+      <form>
+        <div>
+          <label class="description" id="title1" for="field1">
+            Podaj imię:
+          </label>
+          <input type="text" id="field1" name="field1" />
+        </div>
+
+        <div>
+          <label class="description" id="title2" for="field2">
+            Podaj hasło:
+          </label>
+          <input
+            type="password"
+            id="field2"
+            name="field2"
+            title="Minimum jedna cyfra i jeden znak duzy i 1 maly i min 6 znakow"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+          />
+          <!-- walidacja hasła! -->
+        </div>
+
+        <div>
+          <label class="description" id="title3" for="field3">
+            Podaj email:
+          </label>
+          <input type="email" id="field3" name="field3" required />
+        </div>
+
+        <div>
+          <label class="description" id="age_label" for="age"
+            >Ile masz lat doświadczenia zawodowego?</label
+          >
+          <input type="number" id="age" name="age" min="2" max="12" value="3" />
+        </div>
+        <div></div>
+        <div>
+          <label class="description" id="title4" for="field4"
+            >Opisz swój problem:</label
+          >
+
+          <div>
+            <textarea
+              id="field4"
+              name="field4"
+              rows="5"
+              cols="20"
+              spellcheck="true"
+            >
+            </textarea>
+          </div>
+        </div>
+
+        <div>
+          <fieldset>
+            <legend class="description" id="title5">
+              Wybierz sport zimowy:
+            </legend>
+            <div>
+              <div>
+                <input
+                  type="radio"
+                  id="radio_0"
+                  name="radio"
+                  value="default"
+                  checked="checked"
+                />
+                <label class="choice" id="title6_0" for="radio_0"
+                  >Nie interesuje się
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="radio_1" name="radio" value="skiing" />
+                <label class="choice" id="title6_1" for="radio_1">
+                  Narciarstwo
+                </label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="radio_2"
+                  name="radio"
+                  value="snowboard"
+                />
+                <label class="choice" id="title6_2" for="radio_2"
+                  >Snowboard</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="radio_3"
+                  name="radio"
+                  value="nordic_walking"
+                />
+                <label class="choice" id="title6_3" for="radio_3"
+                  >Nordic walking</label
+                >
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div>
+          <fieldset class="cities">
+            <legend class="description" id="title7">
+              Które miasta lubisz? (mozesz wybrac wiecej niz 1)
+            </legend>
+            <div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="checkbox_1"
+                  name="checkbox_1"
+                  value="poznan"
+                />
+                <label class="choice" id="checkbox_1" for="checkbox_1"
+                  >Poznań</label
+                >
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="checkbox_2"
+                  name="checkbox_2"
+                  value="wroclaw"
+                />
+                <label class="choice" id="checkbox_2" for="checkbox_2"
+                  >Wrocław</label
+                >
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="checkbox_3"
+                  name="checkbox_3"
+                  value="gdansk"
+                />
+                <label class="choice" id="checkbox_3" for="checkbox_3"
+                  >Gdańsk</label
+                >
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div>
+          <label class="description" id="title8" for="field8"
+            >Wybierz 1 ulubioną muzykę:</label
+          >
+          <div>
+            <select id="music" name="music" required>
+              <option value="">Wybierz rodzaj muzyki</option>
+              <option value="jazz">Jazz</option>
+              <option value="classic">Klasyczna</option>
+              <option value="rock">Rock</option>
+              <option value="dance">Dance</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <input
+            type="submit"
+            id="sendForm"
+            name="sendForm"
+            value="Prześlij formularz"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
+
+CSS:
+
+h1{
+    color: blue;
+    font-weight: bold;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 30px 30%;    
+}
+
+form{
+    font-size: 1rem;
+    color: darkgray;
+    background-color: lightyellow;
+} 
+
+form label, form legend{
+    width: 40%;
+    float: left;
+}
+
+form input {
+    width: 60%;
+}
+
+form div{
+    overflow: hidden;
+    /* clear: both; */
+    padding: 5px;
+    
+}
+
+form > div > fieldset{
+    border: 0;
+    /* padding: 10px; */
+    padding: 0;
+    margin: 0;
+}
+
+form > div > fieldset > div > div > label {
+    font-size: 0.9rem;
+    color: black;
+    padding-left: 0.6rem;
+}
+
+form textarea{
+    width: 100%;
+}
+
+/* form/div[6]/div */
+
+form > div > div {
+    padding-left:0;
+}
+
+
+form > div > fieldset > div > div > input{
+    width: auto;
+    float: left;
+    /* margin-left: 0; */
+}
+
+/* xpath full path */
+/* /html/body/div/form/div[7]/fieldset/div/div[1] */
+form > div > fieldset > div > div {
+    padding: 0;
+}
+
+.cities > div > input {
+    width: auto;
+    float: left;
+}
+
+form input:focus{
+    border: 3px solid orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+Form 2 with styles and animations:
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form 2 - register with styles</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-wrapper">
+      <form method="POST" action="http://www.frontend.com/register">
+        <div class="text-center">Zarejestruj się!</div>
+
+        <div class="form-row">
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value=""
+              required
+              autofocus
+            />
+            <label for="name">Nazwa uzytkownika:</label>
+            <span class="icon-wrapper bg-primary">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="input-wrapper">
+            <input type="email" id="email" name="email" value="" required />
+            <label for="email">Email:</label>
+            <span class="icon-wrapper bg-primary">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="input-wrapper">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value=""
+              required
+            />
+            <label for="password">Hasło:</label>
+            <span class="icon-wrapper bg-primary">
+              <i class="fas fa-lock"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-cta">
+          <button type="submit" class="btn btn-primary">Zarejestruj się</button>
+        </div>
+      </form>
+    </div>
+    <script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
+  </body>
+</html>
